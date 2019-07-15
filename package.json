@@ -1,0 +1,33 @@
+{
+  "name": "backendexample",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "migrate-local": "cross-env NODE_ENV=developement DB_USERNAME=admin DB_PASSWORD=admin  DB_HOST=localhost  DB_DATABASE=devDb ./node_modules/.bin/sequelize db:migrate",
+    "migrate-production": "cross-env NODE_ENV=production DB_USERNAME=tBbCVSS6pl DB_PASSWORD=TqPRN2vyyj  DB_HOST=remotemysql.com  DB_DATABASE=tBbCVSS6pl ./node_modules/.bin/sequelize db:migrate",
+    "start-production": "cross-env NODE_ENV=production DB_USERNAME=tBbCVSS6pl DB_PASSWORD=TqPRN2vyyj  DB_HOST=remotemysql.com  DB_DATABASE=tBbCVSS6pl node ./app.js",
+    "start-dev": "cross-env NODE_ENV=development DB_USERNAME=tBbCVSS6pl DB_PASSWORD=TqPRN2vyyj  DB_HOST=remotemysql.com  DB_DATABASE=tBbCVSS6pl node ./app.js",
+    "test": "npm run unittest && npm run integrationtest",
+    "unittest": "cross-env NODE_ENV=test  ./node_modules/.bin/mocha test/unit/**/*.spec.js",
+    "integrationtest": "cross-env NODE_ENV=test   ./node_modules/.bin/mocha test/integration/*.spec.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "busboy": "^0.3.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "memorystream": "^0.3.1",
+    "mysql": "^2.17.1",
+    "node-uuid": "^1.4.8",
+    "sequelize": "^3.35.1",
+    "sequelize-cli": "^3.2.0",
+    "sinon": "^7.3.2",
+    "sqlite3": "^4.0.9",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "cross-env": "^3.1.3",
+    "mocha": "^3.5.3",
+    "supertest": "^2.0.1"
+  }
+}

@@ -1,0 +1,6 @@
+const path = require('path');
+
+module.exports = {
+  'config': path.resolve('DAL/config', 'config.js'),
+  'migrations-path': path.resolve('DAL', 'migrations'),
+}
